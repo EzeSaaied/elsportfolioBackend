@@ -8,32 +8,33 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/proyectos")
 public class ProyectosController {
 
     @Autowired
     private InterfProyectosService interfProyectosService;
 
-    @GetMapping ("/proyectos/traer")
+    @GetMapping ("/traer")
     public List<Proyectos> getProyectos() {
 
         return interfProyectosService.getProyectos();
     }
 
-    @PostMapping ("/proyectos/crear")
+    @PostMapping ("/crear")
     public String createProyecto (@RequestBody Proyectos proy) {
 
         interfProyectosService.saveProyecto(proy);
         return "El proyecto fue creado correctamente";
     }
 
-    @DeleteMapping ("/proyectos/borrar/{id_proyectos}")
+    @DeleteMapping ("/borrar/{id_proyectos}")
     public String deleteProyectos (@PathVariable Long id_proyectos) {
 
         interfProyectosService.deleteProyecto(id_proyectos);
         return "El proyecto fue eliminado correctamente";
     }
 
-    @PutMapping ("proyectos/editar/{id_proyectos}")
+    @PutMapping ("/editar/{id_proyectos}")
     public Proyectos editProyectos (@PathVariable Long id_proyectos,
                                  @RequestParam ("nombre") String nuevoNombre,
                                  @RequestParam ("descripcion") String nuevaDescripcion,

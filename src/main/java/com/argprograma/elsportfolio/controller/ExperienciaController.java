@@ -8,32 +8,33 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/experiencia")
 public class ExperienciaController {
 
     @Autowired
     private InterfExperienciaService interfExperienciaService;
 
-    @GetMapping ("/experiencia/traer")
+    @GetMapping ("/traer")
     public List<Experiencia> getExperiencia() {
 
         return interfExperienciaService.getExperiencias();
     }
 
-    @PostMapping ("/experiencia/crear")
+    @PostMapping ("/crear")
     public String createExperiencia (@RequestBody Experiencia exp) {
 
         interfExperienciaService.saveExperiencia(exp);
         return "La experiencia fue creada correctamente";
     }
 
-    @DeleteMapping ("/experiencia/borrar/{id_experiencia}")
+    @DeleteMapping ("/borrar/{id_experiencia}")
     public String deleteExperiencia (@PathVariable Long id_experiencia) {
 
         interfExperienciaService.deleteExperiencia(id_experiencia);
         return "La experiencia fue eliminada correctamente";
     }
 
-    @PutMapping ("experiencia/editar/{id_experiencia}")
+    @PutMapping ("/editar/{id_experiencia}")
     public Experiencia editExperiencia (@PathVariable Long id_experiencia,
                                  @RequestParam ("cargo") String nuevoCargo,
                                  @RequestParam ("empresa") String nuevaEmpresa,

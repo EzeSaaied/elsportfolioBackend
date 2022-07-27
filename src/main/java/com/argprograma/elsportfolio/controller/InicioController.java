@@ -8,32 +8,33 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/inicio")
 public class InicioController {
 
     @Autowired
     private InterfInicioService interfInicioService;
 
-    @GetMapping ("/inicio/traer")
+    @GetMapping ("/traer")
     public List<Inicio> getInicio() {
 
         return interfInicioService.getInicios();
     }
 
-    @PostMapping ("/inicio/crear")
+    @PostMapping ("/crear")
     public String createInicio (@RequestBody Inicio ini) {
 
         interfInicioService.saveInicio(ini);
         return "El inicio fue creado correctamente";
     }
 
-    @DeleteMapping ("/inicio/borrar/{id_inicio}")
+    @DeleteMapping ("/borrar/{id_inicio}")
     public String deleteInicio (@PathVariable Long id_inicio) {
 
         interfInicioService.deleteInicio(id_inicio);
         return "El inicio fue eliminado correctamente";
     }
 
-    @PutMapping ("inicio/editar/{id_inicio}")
+    @PutMapping ("/editar/{id_inicio}")
     public Inicio editInicio (@PathVariable Long id_inicio,
                                  @RequestParam ("profilepic") String nuevoProfilepic,
                                  @RequestParam ("titulo") String nuevoTitulo,

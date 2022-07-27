@@ -8,32 +8,33 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/skills")
 public class SkillsController {
 
     @Autowired
     private InterfSkillsService interfSkillsService;
 
-    @GetMapping ("/skills/traer")
+    @GetMapping ("/traer")
     public List<Skills> getSkills() {
 
         return interfSkillsService.getSkills();
     }
 
-    @PostMapping ("/skills/crear")
+    @PostMapping ("/crear")
     public String createSkills (@RequestBody Skills skill) {
 
         interfSkillsService.saveSkill(skill);
         return "El skill fue creado correctamente";
     }
 
-    @DeleteMapping ("/skills/borrar/{id_skills}")
+    @DeleteMapping ("/borrar/{id_skills}")
     public String deleteSkills (@PathVariable Long id_skills) {
 
         interfSkillsService.deleteSkill(id_skills);
         return "El skill fue eliminado correctamente";
     }
 
-    @PutMapping ("skills/editar/{id_skills}")
+    @PutMapping ("/editar/{id_skills}")
     public Skills editSkills (@PathVariable Long id_skills,
                                  @RequestParam ("skill") String nuevoSkill,
                                  @RequestParam ("tipo") String nuevoTipo,
