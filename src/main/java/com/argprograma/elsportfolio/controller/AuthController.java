@@ -32,14 +32,14 @@ public class AuthController {
 
     @PostMapping("/public/auth")
     public ResponseEntity<TokenInfo> authenticate(@RequestBody AuthenticationReq authenticationReq) {
-        logger.info("Autenticando al usuario {}", authenticationReq.getUsuario());
+        logger.info("Autenticando al usuario {}", authenticationReq.getUsername());
 
         authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(authenticationReq.getUsuario(),
-                        authenticationReq.getClave()));
+                new UsernamePasswordAuthenticationToken(authenticationReq.getUsername(),
+                        authenticationReq.getPassword()));
 
         final UserDetails userDetails = usuarioDetailsService.loadUserByUsername(
-                authenticationReq.getUsuario());
+                authenticationReq.getUsername());
 
         final String jwt = jwtUtilService.generateToken(userDetails);
 

@@ -6,28 +6,28 @@ public class AuthenticationReq implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private String usuario;
+    private String username;
 
-    private String clave;
+    private String password;
 
-    public AuthenticationReq(String usuario, String clave) {
-        this.usuario = usuario;
-        this.clave = clave;
+    public AuthenticationReq(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUsuario(String username) {
-        this.usuario = usuario;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getClave() {
-        return clave;
+    public String getPassword() {
+        return password;
     }
 
-    public void setClave(String clave) {
-        this.clave = clave;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
