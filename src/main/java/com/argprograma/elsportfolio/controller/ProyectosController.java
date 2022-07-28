@@ -32,16 +32,16 @@ public class ProyectosController {
     public Proyectos editProyectos (@PathVariable Long id_proyectos,
                                  @RequestParam ("nombre") String nuevoNombre,
                                  @RequestParam ("descripcion") String nuevaDescripcion,
-                                 @RequestParam ("año_inicio") int nuevoAñoInicio,
-                                 @RequestParam ("año_final") int nuevoAñoFinal,
+                                 @RequestParam ("aInicio") int nuevoAInicio,
+                                 @RequestParam ("aFinal") int nuevoAFinal,
                                  @RequestParam ("url") String nuevoUrl) {
 
         Proyectos proy = interfProyectosService.findProyecto(id_proyectos);
 
         proy.setNombre(nuevoNombre);
         proy.setDescripcion(nuevaDescripcion);
-        proy.setAño_inicio(nuevoAñoInicio);
-        proy.setAño_final(nuevoAñoFinal);
+        proy.setAInicio(nuevoAInicio);
+        proy.setAFinal(nuevoAFinal);
         proy.setUrl(nuevoUrl);
 
         interfProyectosService.saveProyecto(proy);

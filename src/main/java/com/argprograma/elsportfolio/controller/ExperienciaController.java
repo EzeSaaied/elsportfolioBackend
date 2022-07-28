@@ -33,8 +33,8 @@ public class ExperienciaController {
                                  @RequestParam ("cargo") String nuevoCargo,
                                  @RequestParam ("empresa") String nuevaEmpresa,
                                  @RequestParam ("logo") String nuevoLogo,
-                                 @RequestParam ("año_inicio") int nuevoAñoInicio,
-                                 @RequestParam ("año_final") int nuevoAñoFinal,
+                                 @RequestParam ("aInicio") int nuevoAInicio,
+                                 @RequestParam ("aFinal") int nuevoAFinal,
                                  @RequestParam ("descripcion") String nuevaDescripcion) {
 
         Experiencia exp = interfExperienciaService.findExperiencia(id_experiencia);
@@ -42,8 +42,8 @@ public class ExperienciaController {
         exp.setCargo(nuevoCargo);
         exp.setEmpresa(nuevaEmpresa);
         exp.setLogo(nuevoLogo);
-        exp.setAño_inicio(nuevoAñoInicio);
-        exp.setAño_final(nuevoAñoFinal);
+        exp.setAInicio(nuevoAInicio);
+        exp.setAFinal(nuevoAFinal);
         exp.setDescripcion(nuevaDescripcion);
 
         interfExperienciaService.saveExperiencia(exp);

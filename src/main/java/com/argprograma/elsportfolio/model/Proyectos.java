@@ -21,9 +21,9 @@ public class Proyectos {
     @Lob
     private String descripcion;
     @NonNull
-    private int año_inicio;
+    private int aInicio;
     @NonNull
-    private int año_final;
+    private int aFinal;
     @NonNull
     private String url;
 }

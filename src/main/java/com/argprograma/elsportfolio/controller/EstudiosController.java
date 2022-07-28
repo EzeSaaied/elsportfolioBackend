@@ -33,8 +33,8 @@ public class EstudiosController {
                                  @RequestParam ("titulo") String nuevoTitulo,
                                  @RequestParam ("institucion") String nuevaInstitucion,
                                  @RequestParam ("logo") String nuevoLogo,
-                                 @RequestParam ("año_inicio") int nuevoAñoInicio,
-                                 @RequestParam ("año_final") int nuevoAñoFinal,
+                                 @RequestParam ("aInicio") int nuevoAInicio,
+                                 @RequestParam ("aFinal") int nuevoAFinal,
                                  @RequestParam ("descripcion") String nuevaDescripcion,
                                  @RequestParam ("certificado") String nuevoCertificado) {
 
@@ -43,8 +43,8 @@ public class EstudiosController {
         est.setTitulo(nuevoTitulo);
         est.setInstitucion(nuevaInstitucion);
         est.setLogo(nuevoLogo);
-        est.setAño_inicio(nuevoAñoInicio);
-        est.setAño_final(nuevoAñoFinal);
+        est.setAInicio(nuevoAInicio);
+        est.setAFinal(nuevoAFinal);
         est.setDescripcion(nuevaDescripcion);
         est.setCertificado(nuevoCertificado);
 
