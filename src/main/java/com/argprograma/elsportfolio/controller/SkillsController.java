@@ -14,12 +14,6 @@ public class SkillsController {
     @Autowired
     private InterfSkillsService interfSkillsService;
 
-    @GetMapping ("/traer")
-    public List<Skills> getSkills() {
-
-        return interfSkillsService.getSkills();
-    }
-
     @PostMapping ("/crear")
     public String createSkills (@RequestBody Skills skill) {
 

@@ -14,12 +14,6 @@ public class ExperienciaController {
     @Autowired
     private InterfExperienciaService interfExperienciaService;
 
-    @GetMapping ("/traer")
-    public List<Experiencia> getExperiencia() {
-
-        return interfExperienciaService.getExperiencias();
-    }
-
     @PostMapping ("/crear")
     public String createExperiencia (@RequestBody Experiencia exp) {
 

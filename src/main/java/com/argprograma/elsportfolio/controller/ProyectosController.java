@@ -14,12 +14,6 @@ public class ProyectosController {
     @Autowired
     private InterfProyectosService interfProyectosService;
 
-    @GetMapping ("/traer")
-    public List<Proyectos> getProyectos() {
-
-        return interfProyectosService.getProyectos();
-    }
-
     @PostMapping ("/crear")
     public String createProyecto (@RequestBody Proyectos proy) {
 

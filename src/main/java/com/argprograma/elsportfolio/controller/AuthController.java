@@ -30,7 +30,7 @@ public class AuthController {
     @Autowired
     private JwtUtilService jwtUtilService;
 
-    @PostMapping("/publico/auth")
+    @PostMapping("/public/auth")
     public ResponseEntity<TokenInfo> authenticate(@RequestBody AuthenticationReq authenticationReq) {
         logger.info("Autenticando al usuario {}", authenticationReq.getUsuario());
 

@@ -14,12 +14,6 @@ public class EstudiosController {
     @Autowired
     private InterfEstudiosService interfEstudiosService;
 
-    @GetMapping ("/traer")
-    public List<Estudios> getEstudios() {
-
-        return interfEstudiosService.getEstudios();
-    }
-
     @PostMapping ("/crear")
     public String createEstudio (@RequestBody Estudios est) {
 

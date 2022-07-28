@@ -14,12 +14,6 @@ public class InicioController {
     @Autowired
     private InterfInicioService interfInicioService;
 
-    @GetMapping ("/traer")
-    public List<Inicio> getInicio() {
-
-        return interfInicioService.getInicios();
-    }
-
     @PostMapping ("/crear")
     public String createInicio (@RequestBody Inicio ini) {
 
