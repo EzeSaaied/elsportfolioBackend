@@ -18,14 +18,14 @@ public class ExperienciaController {
     public String createExperiencia (@RequestBody Experiencia exp) {
 
         interfExperienciaService.saveExperiencia(exp);
-        return "La experiencia fue creada correctamente";
+        return "{\"response\":\"La experiencia fue creada correctamente\"}";
     }
 
     @DeleteMapping ("/borrar/{id_experiencia}")
     public String deleteExperiencia (@PathVariable Long id_experiencia) {
 
         interfExperienciaService.deleteExperiencia(id_experiencia);
-        return "La experiencia fue eliminada correctamente";
+        return "{\"response\":\"La experiencia fue borrada correctamente\"}";
     }
 
     @PutMapping ("/editar/{id_experiencia}")

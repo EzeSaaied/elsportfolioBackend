@@ -18,14 +18,14 @@ public class EstudiosController {
     public String createEstudio (@RequestBody Estudios est) {
 
         interfEstudiosService.saveEstudio(est);
-        return "El estudio fue creado correctamente";
+        return "{\"response\":\"El estudio fue creado correctamente\"}";
     }
 
     @DeleteMapping ("/borrar/{id_estudios}")
     public String deleteEstudio (@PathVariable Long id_estudios) {
 
         interfEstudiosService.deleteEstudio(id_estudios);
-        return "El estudio fue eliminado correctamente";
+        return "{\"response\":\"El estudio fue borrado correctamente\"}";
     }
 
      @PutMapping ("/editar/{id_estudios}")

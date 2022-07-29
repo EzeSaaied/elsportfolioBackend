@@ -18,14 +18,14 @@ public class InicioController {
     public String createInicio (@RequestBody Inicio ini) {
 
         interfInicioService.saveInicio(ini);
-        return "El inicio fue creado correctamente";
+        return "{\"response\":\"El inicio fue creado correctamente\"}";
     }
 
     @DeleteMapping ("/borrar/{id_inicio}")
     public String deleteInicio (@PathVariable Long id_inicio) {
 
         interfInicioService.deleteInicio(id_inicio);
-        return "El inicio fue eliminado correctamente";
+        return "{\"response\":\"El inicio fue borrado correctamente\"}";
     }
 
     @PutMapping ("/editar/{id_inicio}")

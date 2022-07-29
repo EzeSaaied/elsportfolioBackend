@@ -18,14 +18,14 @@ public class ProyectosController {
     public String createProyecto (@RequestBody Proyectos proy) {
 
         interfProyectosService.saveProyecto(proy);
-        return "El proyecto fue creado correctamente";
+        return "{\"response\":\"El proyecto fue creado correctamente\"}";
     }
 
     @DeleteMapping ("/borrar/{id_proyectos}")
     public String deleteProyectos (@PathVariable Long id_proyectos) {
 
         interfProyectosService.deleteProyecto(id_proyectos);
-        return "El proyecto fue eliminado correctamente";
+        return "{\"response\":\"El proyecto fue borrado correctamente\"}";
     }
 
     @PutMapping ("/editar/{id_proyectos}")

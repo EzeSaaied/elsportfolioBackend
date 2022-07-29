@@ -18,14 +18,15 @@ public class SkillsController {
     public String createSkills (@RequestBody Skills skill) {
 
         interfSkillsService.saveSkill(skill);
-        return "El skill fue creado correctamente";
+        return "{\"response\":\"El skill fue creado correctamente\"}";
     }
 
     @DeleteMapping ("/borrar/{id_skills}")
     public String deleteSkills (@PathVariable Long id_skills) {
 
         interfSkillsService.deleteSkill(id_skills);
-        return "El skill fue eliminado correctamente";
+        Skills skill = interfSkillsService.findSkill(id_skills);
+        return "{\"response\":\"El skill fue borrado correctamente\"}";
     }
 
     @PutMapping ("/editar/{id_skills}")
