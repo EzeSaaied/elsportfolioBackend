@@ -23,9 +23,9 @@ public class Estudios {
     @Nullable
     private String logo;
     @NonNull
-    private int aInicio;
+    private int a_inicio;
     @NonNull
-    private int aFinal;
+    private int a_final;
     @NonNull
     @Lob
     private String descripcion;
